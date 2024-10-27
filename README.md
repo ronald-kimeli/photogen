@@ -1,4 +1,4 @@
-# Nuxt 3 + Firebase + FirebaseUI + Vuefire 
+# Nuxt 3 + Firebase + Vuefire 
 
 Read this article for more information
 
@@ -60,3 +60,10 @@ pnpm run preview
 yarn preview
 ```
 
+
+Test email and password: 
+
+```
+vocoko8541@evasud.com
+PqFPLae9yJ6B@dL
+```
