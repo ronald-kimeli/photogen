@@ -14,7 +14,6 @@
     "nuxt": "^3.6.1"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.5.5",
     "axios": "^1.7.7",
     "firebase": "^9.23.0",
     "firebaseui": "^6.0.2",
