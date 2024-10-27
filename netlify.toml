@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build" # or "yarn build" depending on your package manager
+  publish = "dist" # or your build directory
+
+[functions]
+  node_bundler = "esbuild" # Optional, based on your setup
+
+[build.environment]
+  NODE_VERSION = "20" # Set your desired Node.js version here
