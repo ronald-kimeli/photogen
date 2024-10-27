@@ -1,7 +1,7 @@
 <template>
   <!-- Navigation -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <header class="mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
       <div class="container">
         <a class="navbar-brand" href="#">Photogen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -11,14 +11,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <nuxt-link :to="`/`" class="nav-link active" aria-current="page">
-                Home
-              </nuxt-link>
+              <nuxt-link :to="`/`" class="nav-link active" aria-current="page">Home</nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link :to="`/login`" class="nav-link">
-               Login
-              </nuxt-link>
+              <nuxt-link :to="`/login`" class="nav-link">Login</nuxt-link>
             </li>
           </ul>
         </div>
@@ -27,22 +23,22 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container text-center">
-      <h1 class="display-3">Explore Stunning Photos</h1>
+  <section class="hero text-white text-center py-5" style="background-image: url('https://images.pexels.com/photos/2567016/pexels-photo-2567016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover;">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Explore Stunning Photos</h1>
       <p class="lead">Share your imagination with the world.</p>
+      <a class="btn btn-primary btn-lg" href="#features">Discover More</a>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="features">
+  <section id="features" class="features py-5">
     <div class="container">
+      <h2 class="text-center mb-4">Features</h2>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card album-card">
-            <img
-              src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="card-img-top" alt="Feature 1">
+          <div class="card album-card shadow-sm">
+            <img src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Feature 1">
             <div class="card-body">
               <h5 class="card-title">Feature 1</h5>
               <p class="card-text">This is a sample feature that showcases beautiful photography.</p>
@@ -50,10 +46,8 @@
           </div>
         </div>
         <div class="col">
-          <div class="card album-card">
-            <img
-              src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="card-img-top" alt="Feature 2">
+          <div class="card album-card shadow-sm">
+            <img src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Feature 2">
             <div class="card-body">
               <h5 class="card-title">Feature 2</h5>
               <p class="card-text">Discover more stunning features and get inspired.</p>
@@ -61,10 +55,8 @@
           </div>
         </div>
         <div class="col">
-          <div class="card album-card">
-            <img
-              src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              class="card-img-top" alt="Feature 3">
+          <div class="card album-card shadow-sm">
+            <img src="https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Feature 3">
             <div class="card-body">
               <h5 class="card-title">Feature 3</h5>
               <p class="card-text">Engage with a community of passionate photographers.</p>
@@ -76,9 +68,9 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="faq">
+  <section class="faq py-5">
     <div class="container">
-      <h2 class="text-center">Frequently Asked Questions</h2>
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
@@ -137,10 +129,19 @@ definePageMeta({
 });
 
 auth ? await navigateTo('/dashboard') : console.log("Successfully signed out");
-
 </script>
 
 <style scoped>
+.hero {
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .features {
   padding: 40px 0;
 }
@@ -149,16 +150,18 @@ auth ? await navigateTo('/dashboard') : console.log("Successfully signed out");
   border: none;
   border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .album-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .accordion-button {
   background-color: #343a40;
   color: white;
+  transition: background-color 0.3s;
 }
 
 .accordion-button:not(.collapsed) {
@@ -171,5 +174,6 @@ auth ? await navigateTo('/dashboard') : console.log("Successfully signed out");
 
 h2 {
   margin-bottom: 30px;
+  font-weight: bold;
 }
 </style>
