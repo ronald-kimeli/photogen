@@ -64,6 +64,6 @@ yarn preview
 Test email and password: 
 
 ```
-vocoko8541@evasud.com
-PqFPLae9yJ6B@dL
+email - vocoko8541@evasud.com
+password - PqFPLae9yJ6B@dL
 ```
